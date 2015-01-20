@@ -1,0 +1,20 @@
+#person_spec.rb
+require 'spec_helper'
+
+describe Person do
+	line = 'Wallace | William | W | M | Blue | 4-1-1954'
+
+	it "sanity check" do
+		expect(1).to be == 1
+	end
+
+	it 'Person object check' do
+		obj = Person.new(line)
+		expect(obj.last_name).to eq('Wallace')
+		expect(obj.first_name).to eq('William')
+		expect(obj.middle_initial).to eq('W')
+		expect(obj.gender).to eq('M')
+		expect(obj.favorite_color).to eq('Blue')
+		expect(obj.date_of_birth).to eq(Date.parse('4-1-1954'))
+	end
+end
